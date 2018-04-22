@@ -42,3 +42,24 @@ When starting out on a blank page, I wrote out a to-do list:
  Now that I was able to pull a random Movie title from my list, I needed to figure out how to hide the title with dashes.
  I figured I would start with an empty string, loop over the Movie title, and concatenate dashes or spaces appropriately.
  I ran into a little trouble with trying to concatenate chars onto strings, but I quickly figured out the issue with a google search.
+ 
+ ---
+ After having my `gameAnswer` and my `hiddenWord`, I wanted to take a letter, compare it to each letter in `gameAnswer` 
+ and if there are any matches, reveal that letter in the appropriate place in the `hiddenWord`.
+ 
+ I considered using `indexOf()` to do this, but I would still need to run a loop in the case that there would be multiple characters to reveal in the `hiddenWord`. I figured - if I'm going to run a loop, instead of calling a function to return the position of a specific char, It would be easier to just loop over the string `gameAnswer` and compare each character in the string to the letter I'm looking for.
+ 
+I can see using `indexOf()` if my string contained hundreds or thousands of characters, but these strings are very small as they are movie titles.
+
+---
+Now that I have a random `gameAnswer`, that answer hidden with dashes as `hiddenWord`, and I can now compare a letter and reveal any matches in the `hiddenWord` - it was time to actually make this a game.
+
+1. I integrated `Scanner` to take in a guess from the user.
+2. I made a loop in `main` that would exit out once the `hiddenWord` had fully been revealed.
+      * I decided to make a method that would compare `hiddenWord` to `gameAnswer` to see if they matched.
+3. I added a String `ArrayList` that would hold each answer our user would give. I would be able to iterate over this `ArrayList` to see if our user is repeating a guess, and if they are, give them a chance to make a different guess.
+4. I added a loop to make sure that our user wasn't entering in more than one letter.
+5. I added a counter that kept track of the number of incorrect guesses our user would make - and then included that counter in the `main`'s `while` loop so that the game out end after 3 incorrect guesses.
+
+---
+After completing all of those smaller changes, the Movie Hangman game came together quickly.
